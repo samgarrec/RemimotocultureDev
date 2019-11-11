@@ -1,0 +1,231 @@
+<footer>
+
+    <div class="footer-left footer-box">
+
+        <div class="brand_name"> Rémi Motoculture</div>
+        <div class="brand_slogan"> Matériel parcs<span class="white" > &</span> jardins</div>
+        <div class="tel"  ><a href="tel:0297302640">0297435654</a> </div>
+        <div class="adresse" >ZI du Moustoir, axe Auray/ Belz, 56950 Crac'h</div>
+
+
+
+
+
+    </div>
+
+    <div class="footer-center footer-box">
+        <ul>
+
+          <a> <li>Accueil</li></a>
+            <a> <li>Produits</li></a>
+            <a> <li>A propos</li></a>
+            <a> <li>Contact</li></a>
+
+
+
+        </ul>
+
+
+
+    </div>
+
+    <div class="footer-right footer-box">
+
+
+
+    </div>
+
+</footer>
+
+
+
+
+
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script> -->
+<script src="assets/jquery.lettering.js"></script>
+<script src="assets/jquery.textillate.js"></script>
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+
+</script>
+<script>$
+
+ function redimensionnement() {
+    var myElement = document.getElementById('fluid');
+    if("matchMedia" in window) { // Détection
+        if(window.matchMedia("(max-width:960px)").matches) {
+            console.log('fenetre moins de 960');
+            var mc = new Hammer(myElement);
+
+
+            mc.on("swiperight", function(ev) {
+
+                $('nav').addClass('slideRight');
+                $('.navTrigger').addClass('active');
+                console.log('actif');
+            });
+            mc.on("swipeleft", function(ev) {
+                $('nav').removeClass('slideRight');
+                $('.navTrigger').removeClass('active');
+                console.log('inactif');
+
+            });
+
+        } else  if(window.matchMedia("(min-width:960px)").matches) {
+
+            console.log('plus de 960');
+            var mc = new Hammer(myElement);
+
+
+            mc.on("swiperight", function(ev) {
+
+                $('nav').removeClass('slideRight');
+                $('.navTrigger').removeClass('active');
+                console.log('actif');
+            });
+            mc.on("swipeleft", function(ev) {
+                $('nav').removeClass('slideRight');
+                $('.navTrigger').removeClass('active');
+                console.log('inactif');
+
+            });
+        }
+    }
+}
+window.addEventListener('resize', redimensionnement, false);
+
+
+
+
+
+
+
+
+/*
+
+    if (window.matchMedia("(max-height: 424px)").matches) {
+        $win=$(window);
+        $h=$win.height();
+console.log($h + ' px');
+
+    }
+*/
+
+
+</script>
+<script>$('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+
+
+
+    $('nav').toggleClass('slideRight');
+
+    $('.navigation_item a').addClass('white') ;
+
+});</script>
+
+<script>
+    $(window).on('resize', function(){
+        var win = $(this); //this = window
+
+        if (win.width() >= 960) { $('nav').removeClass('slideRight');
+            $('.navTrigger').removeClass('active');
+
+        }
+
+    });</script>
+<script src="assets/js/texteanim.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+
+
+
+    $('.navigation_item a').click(function () {
+
+        $('nav').toggleClass('slideRight');
+        $('.navTrigger').removeClass('active');
+
+    });
+
+    ScrollReveal().reveal('.images_marques');
+
+</script>
+
+
+<script>// Fonction pour coller la barre de navaigation en haut de la fenetre de navigation au scroll
+
+
+$(window).scroll(function() {
+    var sticky = $('header'),
+        scroll = $(window).scrollTop();
+    console.log('ecko');
+    if (scroll >= 20) {
+
+
+
+        $('.diaporamma_container').addClass('margin_top-container');
+        sticky.addClass('fixed');
+    }
+    else {
+        sticky.removeClass('fixed');
+        $('.diaporamma_container').removeClass('margin_top-container');
+
+
+
+
+
+    }
+});
+
+
+
+
+</script>
+
+
+
+<script src="assets/js/responsiveSlides.js"></script>
+<script>
+
+    $(".rslides").responsiveSlides({
+        auto: true,             // Boolean: Animate automatically, true or false
+        speed: 500,            // Integer: Speed of the transition, in milliseconds
+        timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+        pager: false,           // Boolean: Show pager, true or false
+        nav: false,             // Boolean: Show navigation, true or false
+        random: false,          // Boolean: Randomize the order of the slides, true or false
+        pause: false,           // Boolean: Pause on hover, true or false
+        pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+        prevText: "Previous",   // String: Text for the "previous" button
+        nextText: "Next",       // String: Text for the "next" button
+        maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+        navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+        manualControls: "",     // Selector: Declare custom pager navigation
+        namespace: "rslides",   // String: Change the default namespace used
+        before: function(){},   // Function: Before callback
+        after: function(){}     // Function: After callback
+    });
+
+</script>
+<script>
+
+
+    $(function() {
+
+
+        $('.lds-facebook').delay('0.4s').fadeOut('normal');
+        console.log('bonjout normalement le loader à disparu' );
+
+    })
+
+</script>
+
+</html>
